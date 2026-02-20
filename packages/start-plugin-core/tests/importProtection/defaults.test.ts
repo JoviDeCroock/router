@@ -13,6 +13,7 @@ describe('getDefaultImportProtectionRules', () => {
         '@tanstack/react-start/server',
         '@tanstack/solid-start/server',
         '@tanstack/vue-start/server',
+        '@tanstack/preact-start/server',
       ]),
     )
 
@@ -32,7 +33,7 @@ describe('getDefaultImportProtectionRules', () => {
   })
 
   test('works for all frameworks', () => {
-    for (const fw of ['react', 'solid', 'vue'] as const) {
+    for (const fw of ['react', 'solid', 'vue', 'preact'] as const) {
       const rules = getDefaultImportProtectionRules(fw)
       expect(rules.client.specifiers.length).toBeGreaterThan(0)
       expect(rules.client.files.length).toBeGreaterThan(0)
@@ -52,10 +53,12 @@ describe('getMarkerSpecifiers', () => {
   test('includes all frameworks', () => {
     const markers = getMarkerSpecifiers('react')
 
-    expect(markers.serverOnly.length).toBe(3)
-    expect(markers.clientOnly.length).toBe(3)
+    expect(markers.serverOnly.length).toBe(4)
+    expect(markers.clientOnly.length).toBe(4)
 
     expect(markers.serverOnly).toContain('@tanstack/solid-start/server-only')
     expect(markers.clientOnly).toContain('@tanstack/vue-start/client-only')
+    expect(markers.serverOnly).toContain('@tanstack/preact-start/server-only')
+    expect(markers.clientOnly).toContain('@tanstack/preact-start/client-only')
   })
 })
