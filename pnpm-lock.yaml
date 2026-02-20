@@ -46,6 +46,9 @@ overrides:
   '@tanstack/vue-start': workspace:*
   '@tanstack/vue-start-client': workspace:*
   '@tanstack/vue-start-server': workspace:*
+  '@tanstack/preact-start': workspace:*
+  '@tanstack/preact-start-client': workspace:*
+  '@tanstack/preact-start-server': workspace:*
   '@tanstack/start-plugin-core': workspace:*
   '@tanstack/start-client-core': workspace:*
   '@tanstack/start-server-core': workspace:*
@@ -11685,6 +11688,99 @@ importers:
       preact:
         specifier: ^10.25.0
         version: 10.28.3
+
+  packages/preact-start:
+    dependencies:
+      '@tanstack/preact-router':
+        specifier: workspace:*
+        version: link:../preact-router
+      '@tanstack/preact-start-client':
+        specifier: workspace:*
+        version: link:../preact-start-client
+      '@tanstack/preact-start-server':
+        specifier: workspace:*
+        version: link:../preact-start-server
+      '@tanstack/start-client-core':
+        specifier: workspace:*
+        version: link:../start-client-core
+      '@tanstack/start-plugin-core':
+        specifier: workspace:*
+        version: link:../start-plugin-core
+      '@tanstack/start-server-core':
+        specifier: workspace:*
+        version: link:../start-server-core
+      pathe:
+        specifier: ^2.0.3
+        version: 2.0.3
+      preact:
+        specifier: ^10.0.0
+        version: 10.28.3
+    devDependencies:
+      '@tanstack/router-utils':
+        specifier: workspace:*
+        version: link:../router-utils
+      vite:
+        specifier: ^7.3.1
+        version: 7.3.1(@types/node@25.0.9)(jiti@2.6.1)(lightningcss@1.30.2)(sass-embedded@1.97.2)(sass@1.97.2)(terser@5.37.0)(tsx@4.20.3)(yaml@2.8.1)
+
+  packages/preact-start-client:
+    dependencies:
+      '@tanstack/preact-router':
+        specifier: workspace:*
+        version: link:../preact-router
+      '@tanstack/router-core':
+        specifier: workspace:*
+        version: link:../router-core
+      '@tanstack/start-client-core':
+        specifier: workspace:*
+        version: link:../start-client-core
+      preact:
+        specifier: ^10.0.0
+        version: 10.28.3
+      tiny-invariant:
+        specifier: ^1.3.3
+        version: 1.3.3
+      tiny-warning:
+        specifier: ^1.0.3
+        version: 1.0.3
+    devDependencies:
+      '@preact/preset-vite':
+        specifier: ^2.9.4
+        version: 2.10.3(@babel/core@7.28.5)(preact@10.28.3)(rollup@4.55.3)(vite@7.3.1(@types/node@25.0.9)(jiti@2.6.1)(lightningcss@1.30.2)(sass-embedded@1.97.2)(sass@1.97.2)(terser@5.37.0)(tsx@4.20.3)(yaml@2.8.1))
+      '@testing-library/jest-dom':
+        specifier: ^6.6.3
+        version: 6.6.3
+      '@testing-library/preact':
+        specifier: ^3.2.4
+        version: 3.2.4(preact@10.28.3)
+
+  packages/preact-start-server:
+    dependencies:
+      '@tanstack/history':
+        specifier: workspace:*
+        version: link:../history
+      '@tanstack/preact-router':
+        specifier: workspace:*
+        version: link:../preact-router
+      '@tanstack/router-core':
+        specifier: workspace:*
+        version: link:../router-core
+      '@tanstack/start-client-core':
+        specifier: workspace:*
+        version: link:../start-client-core
+      '@tanstack/start-server-core':
+        specifier: workspace:*
+        version: link:../start-server-core
+    devDependencies:
+      '@preact/preset-vite':
+        specifier: ^2.9.4
+        version: 2.10.3(@babel/core@7.28.5)(preact@10.28.3)(rollup@4.55.3)(vite@7.3.1(@types/node@25.0.9)(jiti@2.6.1)(lightningcss@1.30.2)(sass-embedded@1.97.2)(sass@1.97.2)(terser@5.37.0)(tsx@4.20.3)(yaml@2.8.1))
+      preact:
+        specifier: ^10.25.0
+        version: 10.28.3
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
 
   packages/react-router:
     dependencies:

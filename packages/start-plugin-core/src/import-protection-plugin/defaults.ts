@@ -17,6 +17,7 @@ export function getDefaultImportProtectionRules(
     'react',
     'solid',
     'vue',
+    'preact',
   ]
 
   // Deny client importing server-specific entrypoints
@@ -47,6 +48,7 @@ export function getMarkerSpecifiers(_framework: CompileStartFrameworkOptions): {
     'react',
     'solid',
     'vue',
+    'preact',
   ]
 
   return {

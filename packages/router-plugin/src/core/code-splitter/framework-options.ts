@@ -41,6 +41,16 @@ export function getFrameworkOptions(framework: string): FrameworkOptions {
         },
       }
       break
+    case 'preact':
+      frameworkOptions = {
+        package: '@tanstack/preact-router',
+        idents: {
+          createFileRoute: 'createFileRoute',
+          lazyFn: 'lazyFn',
+          lazyRouteComponent: 'lazyRouteComponent',
+        },
+      }
+      break
     default:
       throw new Error(
         `[getFrameworkOptions] - Unsupported framework: ${framework}`,
